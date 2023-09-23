@@ -22,9 +22,12 @@ func main() {
 
 	client := pb.NewGrpcServiceClient(conn)
 
-	//names := &pb.NamesList{
-	//	Name: []string{"Shyam", "Kumar", "Kadiyam"},
-	//}
+	names := &pb.NamesList{
+		Name: []string{"Shyam", "Kumar", "Kadiyam"},
+	}
 
-	callSayHello(client)
+	//callSayHello(client)
+	//callSayHelloServerStream(client, names)
+	//callSayHelloClientStream(client, names)
+	callSayHelloBidirectionalStream(client, names)
 }
